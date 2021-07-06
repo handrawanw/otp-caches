@@ -2,10 +2,10 @@
 
 #### npm install
 ```
-npm install otp-cache node-cache
+npm install otp-cache
 ```
 
-fix audit
+#### fix audit
 ```
 npm audit fix
 ```
@@ -26,7 +26,7 @@ function generate_otp(req, res, next) {
 }
 ```
 
-#### OTP GENERATE OPTIONS
+#### OTP GENERATE OPTIONS (object)
 | Options | Type data | Default |
 | --- | --- | --- |
 | digits | int | 6 |
@@ -35,7 +35,7 @@ function generate_otp(req, res, next) {
 
 
 
-#### Verify OTP 
+#### Verify OTP (object)
 | Options | Type data | Default |
 | --- | --- | --- |
 | otp_code | int | "" |
@@ -99,3 +99,6 @@ app.use(errHandler);
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));
 
 ```
+
+##### noted
+Never underestimate the determination of a child who is rich in time and poor in money
