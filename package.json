@@ -1,8 +1,11 @@
 {
   "name": "otp-cache",
-  "version": "1.0.2",
-  "description": "A simple one-time password, with numeric, alphanumeric, and alpha results, to increase the added security of your applications",
+  "version": "1.0.1",
+  "description": "Additional security one time password, increase the security of your application.",
   "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
   "dependencies": {
     "node-cache": "^5.1.2"
   },
@@ -10,16 +13,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["otp","one time password","otp code","express otp","node otp","nodejs otp"],
-  "author": "handrawanw",
-  "license": "ISC",
-  "directories": {
-    "example": "example"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/handrawanw/otp-caches.git"
   },
+  "keywords": [
+    "otp",
+    "one",
+    "time",
+    "password",
+    "node",
+    "otp",
+    "express",
+    "otp"
+  ],
+  "author": "handrawan",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/handrawanw/otp-caches/issues"
   },
