@@ -15,5 +15,13 @@
   "license": "ISC",
   "directories": {
     "example": "example"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/handrawanw/otp-caches.git"
+  },
+  "bugs": {
+    "url": "https://github.com/handrawanw/otp-caches/issues"
+  },
+  "homepage": "https://github.com/handrawanw/otp-caches#readme"
 }
