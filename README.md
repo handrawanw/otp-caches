@@ -2,7 +2,7 @@
 
 #### npm install
 ```
-npm install otp-cache
+npm install otp-caches
 ```
 
 #### fix audit
