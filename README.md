@@ -15,38 +15,33 @@ npm audit fix
 
 Generate OTP ( Promise )
 ```
-function generate_otp(req, res, next) {
-    OtpGenerate({}).then((OTP)=>{
-        res.status(201).json({
-            message: `OTP Code Generated Successfully`,
-            OTP,
-            status: 201,
-        });
-    }).catch(next);
-}
+    OtpGenerate({digits:6,type_code:"numeric",time:60}).then((OTP)=>{
+        console.log("OTP Code Generated Successfully");
+    }).catch((err)=>{
+      console.error("Generate OTP : "+err.message);
+    });
 ```
 
 #### OTP GENERATE OPTIONS (object)
 | Options | Type data | Default |
 | --- | --- | --- |
 | digits | int | 6 |
-| type_code | string | alphanumeric |
+| type_code | string | alphanumeric, numeric or alpha |
 | time | int | 60 (60 seconds) |
 
 
 
-#### Verify OTP (object)
+#### Verify OTP (Promise) - 
 | Options | Type data | Default |
 | --- | --- | --- |
 | otp_code | int | "" |
 
 ```
-function verifyOtp(req, res, next) {
-    const {token}=req.body;
-    OtpVerify({ otp_code: token }).then(()=>{
-       next();
-    }).catch(next);
-}
+    OtpVerify({ otp_code: "ST0DK1" }).then(()=>{
+       console.log("OTP Verified");
+    }).catch((err)=>{
+      console.error("Verify OTP : "+err.message);
+    });
 ```
 
 #### Full example express js
@@ -100,5 +95,5 @@ app.listen(PORT, () => console.log(`Server started on ${PORT}`));
 
 ```
 
-##### noted
+##### Noted
 Never underestimate the determination of a child who is rich in time and poor in money
