@@ -45,6 +45,4 @@ Generate OTP ( Promise )
 | --- | --- | --- |
 | otp_code | string | "" |
 
-
-##### Noted
-Never underestimate the determination of a child who is rich in time and poor in money
+#### Enjoy
