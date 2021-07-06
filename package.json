@@ -1,0 +1,19 @@
+{
+  "name": "otp-cache",
+  "version": "1.1.2",
+  "description": "A simple one-time password, with numeric, alphanumeric, and alpha results, to increase the added security of your applications",
+  "main": "index.js",
+  "dependencies": {
+    "node-cache": "^5.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "handrawanw",
+  "license": "ISC",
+  "directories": {
+    "example": "example"
+  }
+}
