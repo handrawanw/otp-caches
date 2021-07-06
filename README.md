@@ -34,7 +34,7 @@ Generate OTP ( Promise )
 #### Verify OTP (Promise) - 
 | Options | Type data | Default |
 | --- | --- | --- |
-| otp_code | int | "" |
+| otp_code | string | "" |
 
 ```
     OtpVerify({ otp_code: "ST0DK1" }).then(()=>{
