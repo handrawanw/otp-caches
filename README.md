@@ -31,18 +31,19 @@ Generate OTP ( Promise )
 
 
 
-#### Verify OTP (Promise) - 
-| Options | Type data | Default |
-| --- | --- | --- |
-| otp_code | string | "" |
-
-```
+#### Verify OTP (Promise) -
+ ```
     OtpVerify({ otp_code: "ST0DK1" }).then(()=>{
        console.log("OTP Verified");
     }).catch((err)=>{
       console.error("Verify OTP : "+err.message);
     });
 ```
+
+#### OTP VERIFY OPTIONS (object)
+| Options | Type data | Default |
+| --- | --- | --- |
+| otp_code | string | "" |
 
 
 ##### Noted
