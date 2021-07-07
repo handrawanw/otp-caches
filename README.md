@@ -10,6 +10,12 @@ npm install otp-caches
 npm audit fix
 ```
 
+### npm 
+```
+npm run otp_example1
+npm run otp_example2
+```
+
 
 ### How To Use ?
 
@@ -59,9 +65,9 @@ Generate OTP ( Promise )
     const {OtpGenerate}=require("otp-cache");
     try {
          let OTP=OtpVerify({ otp_code: "ST0DK1" });
-    if(OTP){
-      console.log("OTP Verified");
-    }
+      if(OTP){
+        console.log("OTP Verified");
+      }
     } catch (error) {
         console.error("Verify OTP : ",error);
     }
