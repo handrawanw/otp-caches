@@ -15,8 +15,9 @@ npm audit fix
 
 Generate OTP ( Promise )
 ```
+  const {OtpGenerate}=require("otp-cache");
     OtpGenerate({digits:6,type_code:"numeric",time:60}).then((OTP)=>{
-        console.log("OTP Code Generated Successfully");
+        console.log("OTP Code Generated Successfully ",OTP);
     }).catch((err)=>{
       console.error("Generate OTP : "+err.message);
     });
@@ -33,6 +34,7 @@ Generate OTP ( Promise )
 
 #### Verify OTP (Promise) -
  ```
+    const {OtpVerify}=require("otp-cache");
     OtpVerify({ otp_code: "ST0DK1" }).then(()=>{
        console.log("OTP Verified");
     }).catch((err)=>{
