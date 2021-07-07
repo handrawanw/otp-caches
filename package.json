@@ -1,6 +1,6 @@
 {
   "name": "otp-cache",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Additional security one time password, increase the security of your application.",
   "main": "index.js",
   "directories": {
