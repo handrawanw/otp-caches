@@ -5,10 +5,12 @@ const caches = new node_cache();
 class OtpCache {
     
 
-    static OtpGenerate({ digits, type_code, time }) {
+    static OtpGenerate() {
         return new Promise((resolve, reject) => {
             "use strict";
             try {
+                arguments[0]=arguments[0]?arguments[0]:{};
+                const { digits, type_code, time }=arguments[0];
                 let bytes = randomBytes(1024 * 2);
                 let SwitchBranch = {
                     "numeric": bytes.toString('hex').replace(/[A-Za-z]/gi, ""),
