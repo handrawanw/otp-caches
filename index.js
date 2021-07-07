@@ -1,4 +1,3 @@
-const crypto = require("crypto");
 const node_cache = require("node-cache");
 const caches = new node_cache();
 
