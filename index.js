@@ -18,7 +18,7 @@ class OtpCache {
             };
             let defaultSwitch = "alphanumeric";
             type_code = type_code || typeof (type_code) === "string" ? Object.keys(SwitchBranch).includes(String(type_code).toLowerCase()) ? String(type_code).toLowerCase() : defaultSwitch : defaultSwitch;
-            digits = digits || typeof (digits) === "number" ? digits : 6;
+            digits = digits || typeof (digits) === "number" ? digits>=6?digits:6 : 6;
             time = time || typeof (time) === "number" ? time : 60;
             let code = "", newCode = "";
             if (SwitchBranch.hasOwnProperty(String(type_code).toLowerCase())) {
