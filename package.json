@@ -1,7 +1,7 @@
 {
   "name": "otp-cache",
-  "version": "1.0.2",
-  "description": "Additional security one time password, increase the security of your application.",
+  "version": "1.0.3",
+  "description": "Additional one time password security, increase the security of your application, Easy to use and fast performance, the bundle size is quite small and light.",
   "main": "index.js",
   "directories": {
     "example": "example"
@@ -19,13 +19,11 @@
   },
   "keywords": [
     "otp",
-    "one",
-    "time",
-    "password",
-    "node",
-    "otp",
-    "express",
-    "otp"
+    "one time password",
+    "node-otp",
+    "express-otp",
+    "simple-otp",
+    "otp-simple"
   ],
   "author": "handrawan",
   "license": "ISC",
