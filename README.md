@@ -24,12 +24,15 @@ Generate OTP ( Promise )
     });
 
   // example async await
-  try {
-    let OTP=OtpGenerate({digits:6,type_code:"numeric",time:60});
-    console.log("OTP Code Generated Successfully ",OTP);
-  }catch(err){
-    console.error("Generate OTP : "+err.message);
-  }
+  (async()=>{
+    const {OtpGenerate}=require("otp-cache");
+    try {
+        let OTP=await OtpGenerate({});
+        console.log(OTP);
+    } catch (error) {
+        console.error("Generate OTP : ",error);
+    }
+})();
 ```
 
 #### OTP GENERATE OPTIONS (object)
@@ -52,14 +55,18 @@ Generate OTP ( Promise )
     });
 
   // example async await
-  try {
-    let OTP=OtpVerify({ otp_code: "ST0DK1" });
+  (async()=>{
+    const {OtpGenerate}=require("otp-cache");
+    try {
+         let OTP=OtpVerify({ otp_code: "ST0DK1" });
     if(OTP){
       console.log("OTP Verified");
     }
-  }catch(err){
-    console.error("Verify OTP : "+err.message);
-  }
+    } catch (error) {
+        console.error("Verify OTP : ",error);
+    }
+ })();
+  
 ```
 
 #### OTP VERIFY OPTIONS (object)
