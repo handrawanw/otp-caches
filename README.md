@@ -62,7 +62,7 @@ Generate OTP ( Promise )
 
   // example async await
   (async()=>{
-    const {OtpGenerate}=require("otp-cache");
+    const {OtpVerify}=require("otp-cache");
     try {
          let OTP=OtpVerify({ otp_code: "ST0DK1" });
       if(OTP){
