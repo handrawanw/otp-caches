@@ -46,7 +46,8 @@ class OtpCache {
     static async OtpVerify() {
         "use strict";
         try {
-            arguments[0] = arguments[0] ? arguments[0] : {};
+            let TypeinstaceOf=Object.prototype.toString.call(arguments[0]).replace(/(\[||\])+/gi,"").split(" ")[1].toLowerCase();;
+            arguments[0]=TypeinstaceOf==="object"?arguments[0]:{};
             let { otp_code = "" } = arguments[0];
             if (otp_code && typeof (otp_code) === "string" && caches.has("otp_caches_" + otp_code)) {
                 caches.del("otp_caches_" + String(otp_code));

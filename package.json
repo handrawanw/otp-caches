@@ -7,7 +7,6 @@
     "example": "example"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "node-cache": "^5.1.2"
   },
   "devDependencies": {},
