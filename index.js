@@ -1,4 +1,4 @@
-const { randomBytes } = require("crypto");
+const crypto = require("crypto");
 const node_cache = require("node-cache");
 const caches = new node_cache();
 
@@ -8,34 +8,36 @@ class OtpCache {
     static async OtpGenerate() {
         "use strict";
         try {
-            arguments[0] = arguments[0] ? arguments[0] : {};
+            let TypeinstaceOf=Object.prototype.toString.call(arguments[0]).replace(/(\[||\])+/gi,"").split(" ")[1].toLowerCase();;
+            arguments[0]=TypeinstaceOf==="object"||{};
             let { digits, type_code, time } = arguments[0];
-            let bytes = randomBytes(1024 * 2);
+            let bytesAlphaNumeric="Aa0Bb1Cc2Dd3Ee4Ff5Gg6Hh7Ii8Jj9Kk0Ll1Mm2Nn3Oo4Pp5Qq6Rr7Ss8Tt9Uu0Vv1Ww2Xx3Yy4Zz5";
             let SwitchBranch = {
-                "numeric": bytes.toString('hex').replace(/[A-Za-z]/gi, ""),
-                "alphanumeric": bytes.toString('hex'),
-                "alpha": bytes.toString('hex').replace(/[0-9]/gi, ""),
+                "numeric": bytesAlphaNumeric.replace(/[A-Za-z]/gi, ""),
+                "alphanumeric": bytesAlphaNumeric.toString('hex'),
+                "alpha": bytesAlphaNumeric.replace(/[0-9]/gi, ""),
             };
-            let defaultSwitch = "alphanumeric";
-            type_code = type_code || typeof (type_code) === "string" ? Object.keys(SwitchBranch).includes(String(type_code).toLowerCase()) ? String(type_code).toLowerCase() : defaultSwitch : defaultSwitch;
-            digits = digits || typeof (digits) === "number" ? digits : 6;
-            time = time || typeof (time) === "number" ? time : 60;
+            let SelectSwitch=Math.abs(Math.ceil(Math.random()*Object.keys(SwitchBranch).length-1));
+            let DynamicTypeCode=Object.keys(SwitchBranch)[SelectSwitch];
+            type_code = type_code || typeof (type_code) === "string" ? Object.keys(SwitchBranch).includes(String(type_code).toLowerCase()) ? String(type_code).toLowerCase() : DynamicTypeCode : DynamicTypeCode;
+            digits = digits || typeof (digits) === "number" ? digits >= 6 ? digits : 6 : 6;
+            time = time || typeof (time) === "number" ? time : 30;
             let code = "", newCode = "";
             if (SwitchBranch.hasOwnProperty(String(type_code).toLowerCase())) {
                 code = SwitchBranch[String(type_code).toLowerCase()];
             }
             do {
-                let randomCodes = Math.floor(Math.random() * code.length - 1, time);
+                let randomCodes = Math.ceil(Math.random() * code.length - 1, time);
                 newCode += code[randomCodes];
                 if (newCode.length === digits) {
-                    if (!caches.has("otp_caches_" + newCode.toUpperCase())) {
-                        caches.set("otp_caches_" + newCode.toUpperCase(), newCode.toUpperCase(), time);
+                    if (!caches.has("otp_caches_" + newCode)) {
+                        caches.set("otp_caches_" + newCode, newCode, time);
                     } else {
                         newCode = "";
                     }
                 }
             } while (newCode.length < digits);
-            return newCode.toUpperCase();
+            return newCode;
         } catch (error) {
             throw new Error(error);
         }
@@ -46,8 +48,8 @@ class OtpCache {
         try {
             arguments[0] = arguments[0] ? arguments[0] : {};
             let { otp_code = "" } = arguments[0];
-            if (otp_code && typeof (otp_code) === "string" && caches.has("otp_caches_" + otp_code.toUpperCase())) {
-                caches.del("otp_caches_" + String(otp_code).toUpperCase());
+            if (otp_code && typeof (otp_code) === "string" && caches.has("otp_caches_" + otp_code)) {
+                caches.del("otp_caches_" + String(otp_code));
                 return true;
             } else {
                 throw new Error(`Invalid otp code ${otp_code}`);

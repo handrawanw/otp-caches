@@ -13,7 +13,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "otp_example1":"nodemon example/example.js",
-    "otp_example2":"node example/example2.js"
+    "otp_example2":"nodemon example/example2.js"
   },
   "repository": {
     "type": "git",
