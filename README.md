@@ -1,8 +1,8 @@
-# otp-caches
+# otp-cache
 
 #### npm install
 ```
-npm install otp-caches
+npm install otp-cache
 ```
 
 #### fix audit
