@@ -9,7 +9,7 @@ class OtpCache {
         "use strict";
         try {
             let TypeinstaceOf=Object.prototype.toString.call(arguments[0]).replace(/(\[||\])+/gi,"").split(" ")[1].toLowerCase();;
-            arguments[0]=TypeinstaceOf==="object"||{};
+            arguments[0]=TypeinstaceOf==="object"?arguments[0]:{};
             let { digits, type_code, time } = arguments[0];
             let bytesAlphaNumeric="Aa0Bb1Cc2Dd3Ee4Ff5Gg6Hh7Ii8Jj9Kk0Ll1Mm2Nn3Oo4Pp5Qq6Rr7Ss8Tt9Uu0Vv1Ww2Xx3Yy4Zz5";
             let SwitchBranch = {

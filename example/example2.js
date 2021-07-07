@@ -1,6 +1,6 @@
 const OTP = require("../index");
 
-OTP.OtpGenerate({digits:4}).then(async(OtpToken)=>{
+OTP.OtpGenerate({digits:6,type_code:"alphanumeric"}).then(async(OtpToken)=>{
     console.log(OtpToken);
     let OTPStatus=await OTP.OtpVerify({otp_code:OtpToken})
     if(OTPStatus){
