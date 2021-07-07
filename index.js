@@ -20,7 +20,7 @@ class OtpCache {
             let SelectSwitch=Math.abs(Math.ceil(Math.random()*Object.keys(SwitchBranch).length-1));
             let DynamicTypeCode=Object.keys(SwitchBranch)[SelectSwitch];
             type_code = type_code || typeof (type_code) === "string" ? Object.keys(SwitchBranch).includes(String(type_code).toLowerCase()) ? String(type_code).toLowerCase() : DynamicTypeCode : DynamicTypeCode;
-            digits = digits || typeof (digits) === "number" ? digits >= 6 ? digits : 6 : 6;
+            digits = digits || typeof (digits) === "number" ? digits >= 4 ? digits : 4 : 4;
             time = time || typeof (time) === "number" ? time : 30;
             let code = "", newCode = "";
             if (SwitchBranch.hasOwnProperty(String(type_code).toLowerCase())) {

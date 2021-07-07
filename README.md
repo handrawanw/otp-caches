@@ -1,16 +1,12 @@
 # otp-cache
 
-#### npm install
+### npm install
 ```
 npm install otp-cache
 ```
 
-#### fix audit
-```
-npm audit fix
-```
 
-### npm 
+### example
 ```
 npm run otp_example1
 npm run otp_example2
@@ -44,9 +40,9 @@ Generate OTP ( Promise )
 #### OTP GENERATE OPTIONS (object)
 | Options | Type data | Default |
 | --- | --- | --- |
-| digits | int | 6 |
-| type_code | string | alphanumeric, numeric or alpha |
-| time | int | 60 (60 seconds) |
+| digits | int | 4 |
+| type_code | string | dynamic -> alphanumeric, numeric or alpha  |
+| time | int | 30 seconds |
 
 
 
