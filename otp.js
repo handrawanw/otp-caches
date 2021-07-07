@@ -10,7 +10,7 @@ class OtpCache {
             "use strict";
             try {
                 arguments[0]=arguments[0]?arguments[0]:{};
-                const { digits, type_code, time }=arguments[0];
+                let { digits, type_code, time }=arguments[0];
                 let bytes = randomBytes(1024 * 2);
                 let SwitchBranch = {
                     "numeric": bytes.toString('hex').replace(/[A-Za-z]/gi, ""),
