@@ -52,7 +52,7 @@ class OtpCache {
                 caches.del("otp_caches_" + String(otp_code));
                 return true;
             } else {
-                throw new Error(`Invalid otp code ${otp_code}`);
+                throw(`Invalid otp code ${otp_code}`);
             }
         } catch (error) {
             throw new Error(error);

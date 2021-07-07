@@ -1,19 +1,20 @@
 {
   "name": "otp-cache",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Additional one time password security, increase the security of your application, Easy to use and fast performance, the bundle size is quite small and light.",
   "main": "index.js",
   "directories": {
     "example": "example"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "node-cache": "^5.1.2"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "otp_example1":"nodemon example/example.js",
-    "otp_example2":"nodemon example/example2.js"
+    "otp_example1": "nodemon example/example.js",
+    "otp_example2": "nodemon example/example2.js"
   },
   "repository": {
     "type": "git",

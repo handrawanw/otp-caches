@@ -2,10 +2,10 @@ const express = require("express");
 const app = express();
 const PORT = 1999;
 
-const { OtpGenerate, OtpVerify } = require(".");
+const { OtpGenerate, OtpVerify } = require("../index");
 
 function generate_otp(req, res, next) {
-    OtpGenerate({}).then((OTP)=>{
+    OtpGenerate({digits:64,type_code:"alphanumeric"}).then((OTP)=>{
         res.status(201).json({
             message: `OTP Code Generated Successfully`,
             OTP,
