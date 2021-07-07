@@ -15,12 +15,21 @@ npm audit fix
 
 Generate OTP ( Promise )
 ```
+ // example promise
   const {OtpGenerate}=require("otp-cache");
     OtpGenerate({digits:6,type_code:"numeric",time:60}).then((OTP)=>{
         console.log("OTP Code Generated Successfully ",OTP);
     }).catch((err)=>{
       console.error("Generate OTP : "+err.message);
     });
+
+  // example async await
+  try {
+    let OTP=OtpGenerate({digits:6,type_code:"numeric",time:60});
+    console.log("OTP Code Generated Successfully ",OTP);
+  }catch(err){
+    console.error("Generate OTP : "+err.message);
+  }
 ```
 
 #### OTP GENERATE OPTIONS (object)
@@ -34,12 +43,23 @@ Generate OTP ( Promise )
 
 #### Verify OTP (Promise) -
  ```
+  // example promise
     const {OtpVerify}=require("otp-cache");
     OtpVerify({ otp_code: "ST0DK1" }).then(()=>{
        console.log("OTP Verified");
     }).catch((err)=>{
       console.error("Verify OTP : "+err.message);
     });
+
+  // example async await
+  try {
+    let OTP=OtpVerify({ otp_code: "ST0DK1" });
+    if(OTP){
+      console.log("OTP Verified");
+    }
+  }catch(err){
+    console.error("Verify OTP : "+err.message);
+  }
 ```
 
 #### OTP VERIFY OPTIONS (object)
@@ -47,4 +67,3 @@ Generate OTP ( Promise )
 | --- | --- | --- |
 | otp_code | string | "" |
 
-#### Enjoy
